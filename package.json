@@ -1,0 +1,23 @@
+{
+  "name": "js-algos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anthony-Mendola/JavaScript-Algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anthony-Mendola/JavaScript-Algorithms/issues"
+  },
+  "homepage": "https://github.com/Anthony-Mendola/JavaScript-Algorithms#readme"
+}
