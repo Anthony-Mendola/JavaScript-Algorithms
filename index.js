@@ -1,23 +1,38 @@
-const insertionSort = (nums) => {
-  for (let i = 1; i < nums.length; i++) { //start with 1 and not 0 because 0 is already sorted. Loops over every number in the array
-    var temp = nums[i];
-    for (var j = i - 1; j >= 0 && nums[j] > temp; j--) {
-      nums[j+1] = nums[j];
-    }
-    nums[j+1] = temp
+const mergeSort = (nums) => {
+  if(nums.length < 2) {
+    return nums;
   }
-return nums
-}
 
-var array = [10,5,3,8,2,6,4,7,9,1]
+  const length = nums.length;
+  const middle = Math.floor(length / 2);
+  const left = nums.slice(0, middle)
+  const right = nums.slice(middle, length);
 
-console.log(insertionSort(array));
+  const sortedLeft = mergeSort(left)
+  const sortedRight = mergeSort(right)
 
-//Pseudocode
-//function insertionSort(nums) 
-// Loop through array
-// Create temp var for current element
-// Create var and set equal to previous element's index
-// Loop backwards while index >= 0 and current element > temp var
-// Set next element equal to current element
-// Set next element equal to temp 
+  return stitch(sortedLeft, sortedRight);
+};
+
+const stitch = (left, right) => {
+  const results = [];
+
+  while(left.length && right.length) {
+    if(left[0] <= right[0]) {
+      results.push(left.shift())
+    }
+    else {
+      results.push(right.shift());
+    }
+
+  }
+  while(left.length) {
+    results.push(left.shift())
+  }
+  while(right.length) {
+    results.push(right.shift())
+  }
+  return results;
+};
+
+console.log(mergeSort([1,2,3,4,5,6,7,8,9,10]))
