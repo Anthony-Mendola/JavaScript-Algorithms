@@ -16,4 +16,5 @@ const quickSort = (nums) => {
 
 //const sortedLeft = quickSort(left)
 return [...quickSort(left), pivot, ...quickSort(right)];
+
 }
